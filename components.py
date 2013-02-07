@@ -1,13 +1,14 @@
-""" Module: components
+"""
+    components
+    ----------
 
-Generic reusable components that are building blocks of
-app-specific features.
+    Generic reusable components that are subclasses of html Elements.
 
 """
 from copy import Copy
 
-from base import Div, Span, OL, SubmitButton, Button, Header, LI, A, Img, Label
-from base import CheckboxInput, RadioInput
+from html import Div, Span, OL, SubmitButton, Button, Header, LI, A, Img, Label
+from html import CheckboxInput, RadioInput
 
 # TODO: where should HEADED_LIST_ITEM be? it's used for ListHeader and
 # HeadedListItem

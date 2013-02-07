@@ -1,11 +1,8 @@
-""" HTML Constants
+"""
+    constants
+    ---------
 
-Provide constants for view.html.
-
-    HTML_TAG
-    HTML_ATTRIBUTE
-    HTML_TYPE
-    HTML_CONSTANT
+    Provide constants for html.py.
 
 """
 

@@ -1,7 +1,9 @@
-""" Module: copy
+"""
+    copy
+    ----
 
-Reusable copy for the element components. Currently, these are strings,
-but later they should probably be templates.
+    Reusable copy for the element components. Currently, these are strings,
+    but later they should probably be templates.
 
 """
 

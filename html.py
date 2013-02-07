@@ -1,88 +1,26 @@
-""" Module: elements
+"""
+    html5
+    -----
 
-Provide generic HTML5 tag implementations as subclasses of python's
-cElementTree library to be wielded for rendering by Tornado's UIModule.
+    Provide generic HTML5 tag implementations as subclasses of python's
+    cElementTree library.
 
-Mobile, web, and native application views should extend these to create
-generic and application-specific components.
+    Mobile, web, and native application views should extend these to create
+    generic and application-specific components.
 
-Over time and as needed, this module will codify portions of the HTML5
-spec. To wit, when front-end code for generating markup seems broadly
-applicable to building anything on any platform, it likely belongs here.
-
-
-The base class Element also provides static cElementTree wrappers:
-    def to_string(element)
-
-
-The following tags are implemented as Element subclasses:
-    div
-    span
-    ol
-    ul
-    li
-    nav
-    a
-    h1
-    h2
-    header
-    section
-    form
-    input
-    button
-    br
-    footer
-    table
-    tr
-    td
-    th
-
-The following tags are not implemented because they are hard-coded in
-the top-level templates, which are not dynamically generated:
-    html
-    head
-    body
-    meta
-    link
-    script
-    hgroup
-
-The following global html5 attributes are currently implemented:
-    class
-    id
-    data-*
+    Over time and as needed, this module will codify portions of the HTML5
+    spec. To wit, when front-end code for generating markup seems broadly
+    applicable to building anything on any platform, it likely belongs here.
 
     http://www.w3.org/community/webed/wiki/HTML/Attributes/_Global
     http://www.w3schools.com/html5/html5_ref_globalattributes.asp
     http://www.w3schools.com/html5/html5_ref_eventattributes.asp
 
-
-The following non-global html5 attributes are currently implemented:
-
-    Attribute       Tag[s]
-    ----------------------
-    href            a
-    name            form, input, button
-    action          form, input[type="submit"], button
-    type            input, button
-    value           input, button
-    checked         input[type="checkbox"]
-    disabled        form, input, button
-    placeholder     input
-    autofocus       input, button
-    src             img
-    alt             img
-
-TODO: required, pattern
-
-Note: we don't actually check for type of input.
-
-The following attributes are implemented as subclasses because
-they change the functionality of their element.
-    type
+    Note: The following attributes are implemented as subclasses because
+    they change the functionality of their element.
+        type
 
 """
-
 import xml.etree.cElementTree as ET
 
 import xsrf
