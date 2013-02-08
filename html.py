@@ -272,6 +272,16 @@ class Element(object):
         self._set_attribute(HTML_ATTRIBUTE.ACTION, url)
 
 
+    def set_get(self):
+        """ Set the method attribute for this element to GET."""
+        self._set_attribute(HTML_ATTRIBUTE.METHOD, "GET")
+
+
+    def set_post(self):
+        """ Set the method attribute for this element to POST."""
+        self._set_attribute(HTML_ATTRIBUTE.METHOD, "POST")
+
+
     def set_alt(self, text):
         """ Set the alt attribute for this element. """
         self._set_attribute(HTML_ATTRIBUTE.ALT, text)
@@ -318,6 +328,10 @@ class Element(object):
 
         """
         self._set_boolean_attribute(HTML_ATTRIBUTE.AUTOFOCUS, autofocus)
+
+
+    def set_rows(self, rows):
+        self._set_attribute(HTML_ATTRIBUTE.ROWS, rows)
 
 
     def set_checked(self, checked=True):
@@ -859,7 +873,7 @@ class Form(Element):
         self.set_name(name)
 
         # add xsrf token bit to prevent xsrf
-        self.append_child(XSRFHiddenInput())
+        # self.append_child(XSRFHiddenInput())
 
 
 class Input(Element):
@@ -989,6 +1003,16 @@ class RadioInput(Input):
         self.set_checked(checked)
 
 
+class Textarea(Element):
+
+    """Define a <textarea>."""
+
+    def __init__(self, name, value=""):
+        super(Textarea, self).__init__(HTML_TAG.TEXTAREA)
+        self.set_name(name)
+        self.set_value(value)
+
+
 class Label(Element):
 
     """ Defines text associated with an Input element.
@@ -1069,6 +1093,13 @@ class Img(Element):
         super(Img, self).__init__(HTML_TAG.IMG)
         self.set_src(source)
         self.set_alt(alt_text)
+
+
+class Body(Element):
+
+
+    def __init__(self):
+        super(Body, self).__init__(HTML_TAG.BODY)
 
 
 class ElementError(Exception):

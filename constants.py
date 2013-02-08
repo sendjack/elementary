@@ -6,7 +6,7 @@
 
 """
 
-from util.decorators import constant
+from jutil.decorators import constant
 
 
 class _HTMLTag(object):
@@ -134,6 +134,11 @@ class _HTMLTag(object):
 
 
     @constant
+    def TEXTAREA(self):
+        return "textarea"
+
+
+    @constant
     def BUTTON(self):
         """ BUTTON is a type of HTML tag. """
         return "button"
@@ -143,6 +148,11 @@ class _HTMLTag(object):
     def LABEL(self):
         """ LABEL is a value of the HTML attribute Type. """
         return "label"
+
+
+    @constant
+    def BODY(self):
+        return "body"
 
 
 HTML_TAG = _HTMLTag()
@@ -181,6 +191,12 @@ class _HTMLAttribute(object):
     def ACTION(self):
         """ ACTION is a type of HTML attribute. """
         return "action"
+
+
+    @constant
+    def METHOD(self):
+        """ METHOD is a type of HTML attribute. """
+        return "method"
 
 
     @constant
@@ -247,6 +263,10 @@ class _HTMLAttribute(object):
     def AUTOFOCUS(self):
         """ AUTOFOCUSis a type of HTML attribute. """
         return "autofocus"
+
+    @constant
+    def ROWS(self):
+        return "rows"
 
 
 HTML_ATTRIBUTE = _HTMLAttribute()
@@ -344,6 +364,7 @@ class _HTMLConstant(object):
                 HTML_TAG.SECTION,
                 HTML_TAG.FORM,
                 HTML_TAG.INPUT,
+                HTML_TAG.TEXTAREA,
                 HTML_TAG.LABEL,
                 HTML_TAG.BUTTON,
                 HTML_TAG.BR,
@@ -353,6 +374,7 @@ class _HTMLConstant(object):
                 HTML_TAG.TD,
                 HTML_TAG.TH,
                 HTML_TAG.IMG,
+                HTML_TAG.BODY
                 ]
 
 
@@ -383,6 +405,7 @@ class _HTMLConstant(object):
         attributes[HTML_TAG.FORM].append(HTML_ATTRIBUTE.ACTION)
         attributes[HTML_TAG.FORM].append(HTML_ATTRIBUTE.DISABLED)
         attributes[HTML_TAG.FORM].append(HTML_ATTRIBUTE.NAME)
+        attributes[HTML_TAG.FORM].append(HTML_ATTRIBUTE.METHOD)
 
         # input tags can also have these attributes:
         attributes[HTML_TAG.INPUT].append(HTML_ATTRIBUTE.AUTOFOCUS)
@@ -393,6 +416,16 @@ class _HTMLConstant(object):
         attributes[HTML_TAG.INPUT].append(HTML_ATTRIBUTE.PLACEHOLDER)
         attributes[HTML_TAG.INPUT].append(HTML_ATTRIBUTE.TYPE)
         attributes[HTML_TAG.INPUT].append(HTML_ATTRIBUTE.VALUE)
+
+        # textarea tags can also have these attributes:
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.AUTOFOCUS)
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.DISABLED)
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.MAXLENGTH)
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.NAME)
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.PLACEHOLDER)
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.TYPE)
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.VALUE)
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.ROWS)
 
         # label tags can also have these attributes
         attributes[HTML_TAG.LABEL].append(HTML_ATTRIBUTE.FOR)
