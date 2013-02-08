@@ -595,8 +595,12 @@ class LI(Element):
 
     def set_content(self, item):
         """ Add content to <li>. """
-        # TODO: make a generic implementation of <li>
-        raise NotImplementedError()
+        if isinstance(item, Element):
+            self.append_child(item)
+        elif type(item) is unicode:
+            self.set_text(item)
+        else:
+            raise NotImplementedError()
 
 
 class Nav(Element):
