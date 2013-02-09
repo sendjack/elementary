@@ -260,11 +260,7 @@ class Element(object):
         The name attribute's value cannot be "".
 
         """
-        if name == "":
-            description = "Name cannot be empty."
-            raise InvalidAttributeError([name], description)
-        else:
-            self._set_attribute(HTML_ATTRIBUTE.NAME, name)
+        self._set_attribute(HTML_ATTRIBUTE.NAME, name)
 
 
     def set_action(self, url):
