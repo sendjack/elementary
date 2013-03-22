@@ -293,6 +293,11 @@ class Element(object):
         self._set_attribute(HTML_ATTRIBUTE.MAXLENGTH, int(size))
 
 
+    def set_tabindex(self, index):
+        """Set the tabindex order for this element."""
+        self._set_attribute(HTML_ATTRIBUTE.TABINDEX, int(index))
+
+
     def set_type(self, type):
         """ Set the type attribute for this element.
 

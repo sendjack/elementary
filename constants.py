@@ -268,6 +268,10 @@ class _HTMLAttribute(object):
     def ROWS(self):
         return "rows"
 
+    @constant
+    def TABINDEX(self):
+        return "tabindex"
+
 
 HTML_ATTRIBUTE = _HTMLAttribute()
 
@@ -400,6 +404,7 @@ class _HTMLConstant(object):
 
         # anchor tags can also have the href attribute set
         attributes[HTML_TAG.A].append(HTML_ATTRIBUTE.HREF)
+        attributes[HTML_TAG.A].append(HTML_ATTRIBUTE.TABINDEX)
 
         # form tags can also have these attributes:
         attributes[HTML_TAG.FORM].append(HTML_ATTRIBUTE.ACTION)
@@ -416,6 +421,7 @@ class _HTMLConstant(object):
         attributes[HTML_TAG.INPUT].append(HTML_ATTRIBUTE.PLACEHOLDER)
         attributes[HTML_TAG.INPUT].append(HTML_ATTRIBUTE.TYPE)
         attributes[HTML_TAG.INPUT].append(HTML_ATTRIBUTE.VALUE)
+        attributes[HTML_TAG.INPUT].append(HTML_ATTRIBUTE.TABINDEX)
 
         # textarea tags can also have these attributes:
         attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.AUTOFOCUS)
@@ -426,6 +432,7 @@ class _HTMLConstant(object):
         attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.TYPE)
         attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.VALUE)
         attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.ROWS)
+        attributes[HTML_TAG.TEXTAREA].append(HTML_ATTRIBUTE.TABINDEX)
 
         # label tags can also have these attributes
         attributes[HTML_TAG.LABEL].append(HTML_ATTRIBUTE.FOR)
@@ -437,6 +444,7 @@ class _HTMLConstant(object):
         attributes[HTML_TAG.BUTTON].append(HTML_ATTRIBUTE.NAME)
         attributes[HTML_TAG.BUTTON].append(HTML_ATTRIBUTE.TYPE)
         attributes[HTML_TAG.BUTTON].append(HTML_ATTRIBUTE.VALUE)
+        attributes[HTML_TAG.BUTTON].append(HTML_ATTRIBUTE.TABINDEX)
 
         # img tags can also have these attributes
         attributes[HTML_TAG.IMG].append(HTML_ATTRIBUTE.SRC)
