@@ -372,6 +372,14 @@ class Element(object):
         return children
 
 
+    def descendants(self):
+        """Return a list of children all the way down the tree."""
+        descendants = []
+        for child in self.children():
+            descendants.append(child.descendants())
+        return descendants
+
+
     def first_child(self):
         """ Return the first immediate child for this element. """
         return self.children()[0]
@@ -1124,6 +1132,7 @@ class ElementError(Exception):
         """ Construct a generic, not quite abstract ElementError. """
         self.expr = ", ".join([str(p) for p in parameters])
         self.msg = description
+        super(ElementError, self).__init__(self.msg)
 
 
 class InvalidTagError(ElementError):
